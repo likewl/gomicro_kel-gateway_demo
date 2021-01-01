@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package Services;
+
+message Test{
+  int64 Code = 1;
+  string Message = 2;
+}
+
+message Request{
+  int64 size = 1;
+}
+
+message Response{
+  Test data = 1;
+}
+service ProdService{
+  rpc GetProd(Request) returns(Response);
+}
